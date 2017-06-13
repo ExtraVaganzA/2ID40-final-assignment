@@ -160,12 +160,11 @@ p {
 	/* fallback for old browsers */
 	background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to right, #7b4397, #dc2430);
 	/* Chrome 10-25, Safari 5.1-6 */
-	/*background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430); /* Here the gradient is made!! */
 	background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: white;
 	text-align: center;
-	padding: 80px 0 300px;
+	padding: 80px 0 60px;
 }
 
 .header .header-content .header-content-inner h1 {

@@ -72,30 +72,32 @@
 			
 			<div class="col-xs-12">
 				<hr class="divider">
-				<h4 class="col-xs-6">Temperature unit</h4>
-				<button type="button" class="btn-sm btn-primary active col-xs-3" style="wid">Celsius</button>
-				<button type="button" class="btn-sm btn-primary disabled col-xs-3">Fahrenheit</button>
+				<h4 style="font-weight:400">Temperature unit</h4>
+				<button type="button" class="btn btn-primary active knopje">Celsius</button>
+				<button type="button" class="btn btn-primary knopje">Fahrenheit</button>
 				<br>
 				<hr class="divider">
-				<h4>Date format</h4>
+				<h4 style="font-weight:400">Date format</h4>
+				<button type="button" class="btn btn-primary active knopje" style="wid">DD/MM/YYYY</button>
+				<button type="button" class="btn btn-primary knopje">MM/DD/YYYY</button>
+				
+				
 				<hr class="divider">
 				<h4>Other settings</h4>
 				
 			</div>
 			
+			
 			<div class="col-xs-12">
 				<br><br>
 				<h1 style="font-weight: 500">Support</h1>
 				<hr class="divider">
-				<h4><a href="./faq.html" class="nolink">Frequently asked questions</a></h4>
+				<h4>Click <a href="./faq.html">here</a> to go to the<br> frequently asked questions.</h4>
 			</div>
-
 		</div>
 	</div>
 
-
-
-
+   
     <!-- jQuery -->
     <script src="lib/jquery/jquery.min.js"></script>
 
@@ -110,4 +112,9 @@
 
 </body>
 
+	<script>
+		$(".knopje").on("click", function() {
+			$( this ).toggleClass( "active" );
+		});
+	</script>
 </html>
