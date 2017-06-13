@@ -158,10 +158,10 @@ p {
     background-size: cover;
     -o-background-size: cover;
 	/* fallback for old browsers */
-	background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
+	background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to right, #7b4397, #dc2430);
 	/* Chrome 10-25, Safari 5.1-6 */
 	/*background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430); /* Here the gradient is made!! */
-	background: url("../img/bg-pattern.png"), linear-gradient(to bottom, black, gray);
+	background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
 	/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 	color: white;
 	text-align: center;
@@ -320,4 +320,15 @@ hr.divider {
 
 .questions {
 	font-weight: 900;
+}
+
+.menuwidth {
+	width: 20%;
+	float: left;
+}
+
+.nolink {
+	text-decoration: none;
+	color: white;
+	
 }
