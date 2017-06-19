@@ -1,0 +1,11 @@
+
+/* Page content */
+main {
+    background-color: #DDD;
+    padding: 10px;
+}
+
+/* Card */
+.mdl-card {
+    width: 100%;
+}
