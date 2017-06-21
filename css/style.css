@@ -1,11 +1,31 @@
 
-/* Page content */
+/* Page content style */
 main {
-    background-color: #DDD;
-    padding: 10px;
+    background-color: #EEE;
 }
 
-/* Card */
-.mdl-card {
-    width: 100%;
+/* Temperature Card Style */
+.temp-card {
+    
+}
+
+.temp-card > .mdl-card__title-text {
+    text-align: center;
+    height: 56px;
+}
+
+.temp-card > .mdl-card__supporting-text {
+    
+}
+
+/* Misc Styles */
+.centered {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.invisible-fab {
+    height: 56px;
+    width: 56px;
 }

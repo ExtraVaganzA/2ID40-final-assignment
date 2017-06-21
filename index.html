@@ -38,24 +38,28 @@
             </span>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="./index.html">
-                    <i class="material-icons">home</i>
+                    <i class="material-icons">
+                        home
+                    </i>
                     Home
                 </a>
                 <a class="mdl-navigation__link" href="./week.html">
-                    <i class="material-icons">date_range</i>
+                    <i class="material-icons">
+                        date_range
+                    </i>
                     Week
                 </a>
-                <a class="mdl-navigation__link" href="./vacation.html">
-                    <i class="material-icons">date_range</i>
-                    Vacation
-                </a>
                 <a class="mdl-navigation__link" href="./faq.html">
-                    <i class="material-icons">question_answer</i>
+                    <i class="material-icons">
+                        question_answer
+                    </i>
                     FAQ
                 </a>
                 <hr>
                 <a class="mdl-navigation__link" href="./settings.html">
-                    <i class="material-icons">settings</i>
+                    <i class="material-icons">
+                        settings
+                    </i>
                     Settings
                 </a>
             </nav>
@@ -63,54 +67,86 @@
         
         <!-- Page Content -->
         <main class="mdl-layout__content">
-            <div class="row">
-                <div class="col-xs-1">
-                </div>
-                <div class="col-xs-10">
-                    <div class="mdl-card mdl-shadow--2dp">
-                        <div class="mdl-card__title">
-                            <div class="mdl-card__title-text">
-                                Greetings!
-                            </div>
-                        </div>
-                        <div class="mdl-card__supporting-text mdl-card--expand">
-                            <p>
-                                Welcome to the homepage of the thermostat of group 26 for the TU/e course 2ID40.
-                            <p>
-                        </div>
-                        <div class="mdl-card__actions mdl-card--border">
-                            <a class="mdl-button mdl-js-button
-                            mdl-button--colored mdl-js-ripple-effect" href="#">
-                                Dismiss
-                            </a>
-                            <a class="mdl-button mdl-js-button
-                            mdl-button--colored mdl-js-ripple-effect" href="#">
-                                Don't show again
-                            </a>
+            <div class="mdl-grid">
+            
+                <!-- Welcome Card -->
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <div class="mdl-card__title-text">
+                            Greetings!
                         </div>
                     </div>
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        <p>
+                            Welcome to the homepage of the thermostat of group 26 for the TU/e course 2ID40.
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect" href="#">
+                            Dismiss
+                        </a>
+                        <a class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect" href="#">
+                            Don't show again
+                        </a>
+                    </div>
                 </div>
-                <div class="col-xs-1">
+            </div>
+            <div class="mdl-grid">
+            
+                <!-- Current Temperature Card -->
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title temp-card">
+                        <div class="mdl-card__title-text">
+                            Current Temperature
+                        </div>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        <div class="invisible-fab"></div>
+                        <h1 class="centered">
+                            20&degC
+                        </h1>
+                        <div class="invisible-fab"></div>
+                    </div>
+                    <div class="mdl-card__actions">
+                        
+                    </div>
                 </div>
                 
-                <div class="col-xs-12">
-                    <h2 id="curTemp">Current temperature</h2>
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect temp-button">
-                        <i class="material-icons">add</i>
-                    </button>
-                    <h1 id="homeScreenTemp">20</h1>
-                    <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect temp-button">
-                        <i class="material-icons">remove</i>
-                    </button>
+                <!-- Target Temperature Card -->
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title temp-card">
+                        <div class="mdl-card__title-text">
+                            Target Temperature
+                        </div>
+                    </div>
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered">
+                            <i class="material-icons">
+                                add
+                            </i>
+                        </button>
+                        <h1 class="centered">
+                            20&degC
+                        </h1>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered">
+                            <i class="material-icons">
+                                remove
+                            </i>
+                        </button>
+                    </div>
+                    <div class="mdl-card__actions">
+                        
+                    </div>
                 </div>
-
             </div>
         </main>
     </div>
     
 
     <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <!-- Material Design Lite JavaScript -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
