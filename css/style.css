@@ -6,17 +6,9 @@ main {
 }
 
 /* Temperature Card Style */
-.temp-card {
-    
-}
-
 .temp-card > .mdl-card__title-text {
-    text-align: center;
+    /*text-align: center; /* to be decided */
     height: 56px;
-}
-
-.temp-card > .mdl-card__supporting-text {
-    
 }
 
 /* Misc Styles */
@@ -31,6 +23,6 @@ main {
     width: 56px;
 }
 
-.some-class {
-    min-height: 0px;
+.slim-card {
+    min-height: 56px;
 }

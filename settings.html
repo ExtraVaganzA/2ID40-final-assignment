@@ -3,118 +3,184 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Group 26 - Thermostat</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
-
-    <!-- Theme CSS -->
-    <link href="css/new-age.css" rel="stylesheet">
-    <link href="css/new-age.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>Settings</title>
+   
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Main Script -->
+    <script defer src="js/settings.js"></script>
+    
 </head>
 
 <body>
-	<!-- Navigation bar on top of the page (fixed position) -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-
-            <div class="col-xs-12" id="navMenu">
-            	<div class="col-xs-3">
-					<a href="./index.html">Home</a>
-				</div>
-           		<div class="col-xs-3">
-					<a href="./week.html">Week</a>
-				</div>
-				<div class="col-xs-3">
-					<a href="./settings.html">Settings</a>
-				</div>
-				<div class="col-xs-3">
-					<a href="./faq.html">FAQ</a>
-				</div>
-			</div>
+	
+    <!-- Page Layout -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    
+        <!-- Header -->
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title">
+                    Settings
+                </span>
+            </div>
+        </header>
+        
+        <!-- Drawer -->
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout__title">
+                Links
+            </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="./index.html">
+                    <i class="material-icons">
+                        home
+                    </i>
+                    Home
+                </a>
+                <a class="mdl-navigation__link" href="./week.html">
+                    <i class="material-icons">
+                        date_range
+                    </i>
+                    Week
+                </a>
+                <a class="mdl-navigation__link" href="./faq.html">
+                    <i class="material-icons">
+                        question_answer
+                    </i>
+                    FAQ
+                </a>
+                <hr>
+                <a class="mdl-navigation__link" href="./settings.html">
+                    <i class="material-icons">
+                        settings
+                    </i>
+                    Settings
+                </a>
+            </nav>
         </div>
-    </nav>
-
-   
-
-	<div class="container header">
-		<div class="row">
-			<div class="col-xs-1">
-			</div>
-			<div class="col-xs-10">
-				<h1 style="font-weight: 500">Settings</h1>
-			</div>
-			<div class="col-xs-1">
-			</div>
-			
-			
-			<div class="col-xs-12">
-				<hr class="divider">
-				<h4 style="font-weight:400">Temperature unit</h4>
-				<button type="button" class="btn btn-primary active knopje">Celsius</button>
-				<button type="button" class="btn btn-primary knopje">Fahrenheit</button>
-				<br>
-				<hr class="divider">
-				<h4 style="font-weight:400">Date format</h4>
-				<button type="button" class="btn btn-primary active knopje" style="wid">DD/MM/YYYY</button>
-				<button type="button" class="btn btn-primary knopje">MM/DD/YYYY</button>
+        
+        <!-- Page Content -->
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+            
+                <!-- Info Card -->
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        <p>
+                            Change the settings to your liking on this page!
+						</p>
+                    </div>
+                </div>
 				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title">
+                        <div class="mdl-card__title-text" >
+                            Temperature unit
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers">
+						<p>What temperature unit do you want to use?</p>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+							<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
+							<span class="mdl-radio__label">Celsius</span>
+						</label>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+							<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+						  	<span class="mdl-radio__label">Fahrenheit</span>
+						</label>
+					</div>
+				</div>
 				
-				<hr class="divider">
-				<h4>Other settings</h4>
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title">
+                        <div class="mdl-card__title-text" >
+                            Date format
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers">
+						<p>What date format do you want to use?</p>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+							<input type="radio" id="option-3" class="mdl-radio__button" name="options2" value="1" checked>
+							<span class="mdl-radio__label">DD/MM/YYYY</span>
+						</label>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+							<input type="radio" id="option-4" class="mdl-radio__button" name="options2" value="2">
+						  	<span class="mdl-radio__label">MM/DD/YYYY</span>
+						</label>
+					</div>
+				</div>
+				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title">
+                        <div class="mdl-card__title-text" >
+                            Threshold
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers">
+						<p>What temperature thresholds do you want to use?</p>
+						<p>Minimum temperature</p>: 
+  						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
+							<label class="mdl-textfield__label" for="sample2">Number...</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+					  	</div>
+					  	
+						<p>Maximum temperature</p>:
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample3" style="float: right">
+							<label class="mdl-textfield__label" for="sample3">Number...</label>
+							<span class="mdl-textfield__error">Input is not a number!</span>
+					  	</div>
+						
+					</div>
+				</div>
+				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title">
+                        <div class="mdl-card__title-text" >
+                            Hints
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers">
+						<p>Do you want to reset the hints?</p>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+							<input type="radio" id="option-5" class="mdl-radio__button" name="options3" value="1" checked>
+							<span class="mdl-radio__label">No</span>
+						</label>
+						
+						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+							<input type="radio" id="option-6" class="mdl-radio__button" name="options3" value="2">
+						  	<span class="mdl-radio__label">Yes</span>
+						</label>
+					</div>
+				</div>
 				
 			</div>
-			
-			
-			<div class="col-xs-12">
-				<br><br>
-				<h1 style="font-weight: 500">Support</h1>
-				<hr class="divider">
-				<h4>Click <a href="./faq.html">here</a> to go to the<br> frequently asked questions.</h4>
-			</div>
-		</div>
-	</div>
-
-   
-    <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/new-age.min.js"></script>
-
+        </main>
+    </div>
 </body>
 
-	<script>
-		$(".knopje").on("click", function() {
-			$( this ).toggleClass( "active" );
-		});
-	</script>
 </html>

@@ -3,184 +3,139 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Group 26 - Thermostat</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
-
-    <!-- Plugin CSS -->
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="lib/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="lib/device-mockups/device-mockups.min.css">
-
-    <!-- Theme CSS -->
-    <link href="css/new-age.css" rel="stylesheet">
-    <link href="css/new-age.min.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <title>Frequently Asked Questions</title>
+   
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-red.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Main Script -->
+    <script defer src="js/faq.js"></script>
+    
 </head>
 
 <body>
-	<!-- Navigation bar on top of the page (fixed position) -->
-    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-
-            <div class="col-xs-12" id="navMenu">
-            	<div class="col-xs-3">
-					<a href="./index.html">Home</a>
-				</div>
-           		<div class="col-xs-3">
-					<a href="./week.html">Week</a>
-				</div>
-				<div class="col-xs-3">
-					<a href="./settings.html">Settings</a>
-				</div>
-				<div class="col-xs-3">
-					<a href="./faq.html">FAQ</a>
-				</div>
-			</div>
+	
+    <!-- Page Layout -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    
+        <!-- Header -->
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title">
+                    FAQ
+                </span>
+            </div>
+        </header>
+        
+        <!-- Drawer -->
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout__title">
+                Links
+            </span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="./index.html">
+                    <i class="material-icons">
+                        home
+                    </i>
+                    Home
+                </a>
+                <a class="mdl-navigation__link" href="./week.html">
+                    <i class="material-icons">
+                        date_range
+                    </i>
+                    Week
+                </a>
+                <a class="mdl-navigation__link" href="./faq.html">
+                    <i class="material-icons">
+                        question_answer
+                    </i>
+                    FAQ
+                </a>
+                <hr>
+                <a class="mdl-navigation__link" href="./settings.html">
+                    <i class="material-icons">
+                        settings
+                    </i>
+                    Settings
+                </a>
+            </nav>
         </div>
-    </nav>
-
-   
-
-	<div class="container header">
-		<div class="row">
-		
-			<div class="col-xs-1">
-			</div>
-			<div class="col-xs-10">
-				<div class="header-content">
-					<div class="header-content-inner">
-						<p id="welcomeText">On this page the most Frequently Asked Questions have been bundled together.</p>
-						<h4>If your question is not present here, do not hesitate to contact us at <br><a href="mailto:r.c.e.a.m.v.d.heijden@student.tue.nl" id="nolink">r.c.e.a.m.v.d.heijden@student.tue.nl</a></h4><br><br>
-
+        
+        <!-- Page Content -->
+        <main class="mdl-layout__content">
+            <div class="mdl-grid">
+            
+                <!-- Info Card -->
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                    <div class="mdl-card__supporting-text mdl-card--expand">
+                        <p>
+                            Below the (hypothetical) most frequently asked questions are posed. 
+						</p>
+                    </div>
+                </div>
+                
+            	<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title" id="q1">
+                        <div class="mdl-card__title-text" >
+                            	Who made this thermostat interface?
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers" id="a1">
+						<p>This web interface for a thermostat was created by group 26, consisting of Kas Burgers, Rodger van der Heijden and Vlad-Andrei Popescu.</p>
+					</div>
+				</div>
+				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title" id="q2">
+                        <div class="mdl-card__title-text" >
+                            How can I add another switch?
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers" id="a2">
+						<p>You can add another switch by going to the menu and going to the "Switches" page. There you can create a switch for all days you want.</p>
+					</div>
+				</div>
+				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title" id="q3">
+                        <div class="mdl-card__title-text" >
+                            How can I permanently override the temperature, for instance when I go on holiday?
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers" id="a3">
+						<p>To make sure you do not unnecessarily heat your home when you're not there, change the temperature on the home screen and select the toggle button beneath it.</p>
+					</div>
+				</div>
+				
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title" id="q4">
+                        <div class="mdl-card__title-text" >
+                            Why can't I select temperatures below 5 degrees or above 30 degrees?
+                        </div>
+					</div>
+					
+					<div class="mdl-card__supporting-text mdl-card--expand answers" id="a4">
+						<p>Because the assignment specified so.</p>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-1">
-			</div>
-			
-			
-			<div class="col-xs-2">
-			</div>
-			<div class="col-xs-8">
-				<hr>
-				<div class="questions" id="q1">
-					<p>How can I turn on the vacation mode?</p>
-				</div>
-				
-				<div id="a1">
-					<hr class="divider">
-					<p>The vacation mode can be found by clicking on the sub-menu "settings" in the navigation bar.<br>
-					You will be led to a page where the first option is the vacation mode.</p>
-				</div>
-				<hr>	
-				
-				<div class="questions" id="q2">
-					<p>Who made this thermostat interface?</p>
-				</div>
-				
-				<div id="a2">
-					<hr class="divider">
-					<p>This web interface for a thermostat was created by group 26, consisting of Kas Burgers, Rodger van der Heijden and Vlad-Andrei Popescu.</p>
-				</div>
-				<hr>	
-				
-				<div class="questions" id="q3">
-					<p>Where can I change the units to imperial or metric?</p>
-				</div>
-				
-				<div id="a3">
-					<hr class="divider">
-					<p>The units that you will see can be changed via the settings. There you can indicate (among other settings) whether you prefer an imperial unit scale or a metric unit scale.</p>
-				</div>
-				<hr>
-		
-			</div>
-			<div class="col-xs-2">
-			</div>
-
-		</div>
-	</div>
-
-
-    <!-- jQuery -->
-    <script src="lib/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-    <!-- Theme JavaScript -->
-    <script src="js/new-age.min.js"></script>
-
+        </main>
+    </div>
 </body>
-
-<script>
-	$("#a1").hide();
-	$("#a2").hide();
-	$("#a3").hide();
-	$("#a4").hide();
-	$("#a5").hide();
-   
-	// For question 1, show answer 1 and hide all other answers
-    $("#q1").on("click",function(){
-		$("#a1").toggle();	
-        $("#a2").hide();
-		$("#a3").hide();
-        $("#a4").hide();
-		$("#a5").hide();
-    });
-	
-    $("#q2").on("click",function(){
-        $("#a1").hide();
-        $("#a2").toggle();
-		$("#a3").hide();
-        $("#a4").hide();
-		$("#a5").hide();
-    });
-	
-    $("#q3").on("click",function(){
-		$("#a1").hide();
-        $("#a2").hide();
-        $("#a3").toggle();
-        $("#a4").hide();
-		$("#a5").hide();
-	});
- 
-    $("#q4").on("click",function(){
-		$("#a1").hide();
-        $("#a2").hide();
-        $("#a3").hide();
-        $("#a4").toggle();
-		$("#a5").hide();
-	});
-	
-    $("#q5").on("click",function(){
-		$("#a1").hide();
-        $("#a2").hide();
-        $("#a3").hide();
-        $("#a4").hide();
-		$("#a5").toggle();
-	});
- </script>
 
 </html>
