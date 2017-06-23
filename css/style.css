@@ -6,9 +6,13 @@ main {
 }
 
 /* Temperature Card Style */
-.temp-card > .mdl-card__title-text {
+.temp-card .mdl-card__title-text {
     /*text-align: center; /* to be decided */
     height: 56px;
+}
+
+.temp-card h2 {
+    margin: 5px;
 }
 
 /* Misc Styles */
@@ -25,4 +29,9 @@ main {
 
 .slim-card {
     min-height: 56px;
+}
+
+.slim-element {
+    padding:0px;
+    margin:0px;
 }

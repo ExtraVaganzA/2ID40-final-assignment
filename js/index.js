@@ -1,23 +1,43 @@
 
-// Global Variables
-var currentTemp = 20;
-var targetTemp = 20;
+// Set local storage variables if this is the first visit.
+if (localStorage.welcomeHint === undefined) {
+    localStorage.welcomeHint = true;
+}
 
-//   Hint default states
-var welcomeHint = true;
-var vacationModeHint = true;
+if (localStorage.vacationModeHint === undefined) {
+    localStorage.vacationModeHint = true;
+}
 
 // Element Manipulation
-if (!welcomeHint) {
+if (localStorage.welcomeHint == "false") {
     $("#welcome-card").hide();
 }
 
-updateTemps();
-
-function updateTemps() {
-    $("#current-temp-card h1").html(currentTemp + "&degC");
-    $("#target-temp-card h1").html(targetTemp + "&degC");
+function update() {
+    getDay();
+    getTime();
+    
+    $("#day-time").html(day + " - " + time);
+    
+    getCurrentTemperature();
+    getTargetTemperature();
+    
+    $("#current-temp-card h2").html(currentTemperature + "&degC");
+    $("#target-temp-card h2").html(targetTemperature + "&degC");
+    
+    $("#temp-plus")[0].disabled = (targetTemperature >= 30);
+    $("#temp-minus")[0].disabled = (targetTemperature <= 5);
+    
+    getWeekProgramState();
+    
+    if (weekProgramState == "on") {
+        $("#vacation-checkbox")[0].checked = false;
+    } else {
+        $("#vacation-checkbox")[0].checked = true;
+    }
 }
+
+setInterval(function() {update();}, 500);
 
 // Click Functions
 $("#welcome-card .close").click(function(){
@@ -25,38 +45,28 @@ $("#welcome-card .close").click(function(){
 });
 
 $("#welcome-card .delete").click(function(){
-    vacationModeHint = false;
+    localStorage.welcomeHint = false;
     $("#welcome-card").hide();
 });
 
 
 $("#temp-plus").click(function(){
-    ++targetTemp;
-    
-    if (targetTemp >= 30) {
-        $("#temp-plus")[0].disabled = true;
-    }
-    
-    $("#temp-minus")[0].disabled = false;
-    
-    updateTemps();
+    setTargetTemperature((parseInt(targetTemperature) + 1).toString());
 });
 
 $("#temp-minus").click(function(){
-    --targetTemp;
-    
-    if (targetTemp <= 5) {
-        $("#temp-minus")[0].disabled = true;
-    }
-    
-    $("#temp-plus")[0].disabled = false;
-    
-    updateTemps();
+    setTargetTemperature((parseInt(targetTemperature) - 1).toString());
 });
 
 $("#vacation-checkbox").click(function() {
-    if(vacationModeHint && $("#vacation-checkbox")[0].checked) {
-        $("#vacation-dialog")[0].showModal();
+    if($("#vacation-checkbox")[0].checked) {
+        if (localStorage.vacationModeHint == "true") {
+            $("#vacation-dialog")[0].showModal();
+        }
+        
+        setWeekProgramState("off");
+    } else {
+        setWeekProgramState("on");
     }
 });
 
@@ -65,6 +75,6 @@ $("#vacation-dialog .close").click(function() {
 });
 
 $("#vacation-dialog .delete").click(function() {
-    vacationModeHint = false;
+    localStorage.vacationModeHint = false;
     $("#vacation-dialog")[0].close();
 });
