@@ -3,7 +3,7 @@
 const serverPath = "http://wwwis.win.tue.nl/2id40-ws/";
 const id = "26/";
 
-//   Functions
+// Functions
 // Thermostat
 function setThermostat(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
     $.ajax({
