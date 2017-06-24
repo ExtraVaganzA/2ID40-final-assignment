@@ -16,6 +16,30 @@ main {
     margin-bottom: 8px;
 }
 
+/* Switches Style */
+.switches table {
+    width: 100%;
+    border: none;
+}
+
+.switches td {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border: none;
+}
+
+.switches td:first-of-type {
+    padding-left: 0px;
+}
+
+.switches td:last-of-type {
+    padding-right: 0px;
+}
+
+.switches .mdl-textfield {
+    width: auto;
+}
+
 /* Misc Styles */
 .centered {
     display: block;

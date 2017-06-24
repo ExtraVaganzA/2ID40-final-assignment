@@ -1,90 +1,10 @@
 
-// By default: hide all switches of all days
-$(".daysOfWeek").hide();
-$(".switchDefault").hide();
-
-// On click on monday, close all (possibly) opened days
-// Show the card if it was hidden before, otherwise close it
-$("#monday").on("click",function(){
-    // Show if closed
-    if (document.getElementById("mondaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#mondaySwitches").toggle();
-    }
-    // And close if shown
-    else if (document.getElementById("mondaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#tuesday").on("click",function(){
-    if (document.getElementById("tuesdaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#tuesdaySwitches").toggle();
-    }
-    else if (document.getElementById("tuesdaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#wednesday").on("click",function(){
-    if (document.getElementById("wednesdaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#wednesdaySwitches").toggle();
-    }
-    else if (document.getElementById("wednesdaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#thursday").on("click",function(){
-    if (document.getElementById("thursdaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#thursdaySwitches").toggle();
-    }
-    else if (document.getElementById("thursdaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#friday").on("click",function(){
-    if (document.getElementById("fridaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#fridaySwitches").toggle();
-    }
-    else if (document.getElementById("fridaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#saturday").on("click",function(){
-    if (document.getElementById("saturdaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#saturdaySwitches").toggle();
-    }
-    else if (document.getElementById("saturdaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#sunday").on("click",function(){
-    if (document.getElementById("sundaySwitches").style.display === 'none') {
-        $(".daysOfWeek").hide();
-        $("#sundaySwitches").toggle();
-    }
-    else if (document.getElementById("sundaySwitches").style.display !== 'none') {
-        $(".daysOfWeek").hide();
-    }
-});
-
-$("#addSwitch").on("click",function(){
-    $("#switches").toggle();
-});
-
 // Element Manipulation
 if (localStorage.weekHint == "false") {
     $("#hint-card").hide();
 }
+
+$(".switches").hide();
 
 // Click Functions
 $("#hint-card .close").click(function(){
@@ -94,4 +14,39 @@ $("#hint-card .close").click(function(){
 $("#hint-card .delete").click(function(){
     localStorage.weekHint = "false";
     $("#hint-card").hide();
+});
+
+$("#monday-card .mdl-card__title").click(function(){
+    $(".switches").not("#monday-card .switches").hide();
+    $("#monday-card .switches").toggle();
+});
+
+$("#tuesday-card .mdl-card__title").click(function(){
+    $(".switches").not("#tuesday-card .switches").hide();
+    $("#tuesday-card .switches").toggle();
+});
+
+$("#wednesday-card .mdl-card__title").click(function(){
+    $(".switches").not("#wednesday-card .switches").hide();
+    $("#wednesday-card .switches").toggle();
+});
+
+$("#thursday-card .mdl-card__title").click(function(){
+    $(".switches").not("#thursday-card .switches").hide();
+    $("#thursday-card .switches").toggle();
+});
+
+$("#friday-card .mdl-card__title").click(function(){
+    $(".switches").not("#friday-card .switches").hide();
+    $("#friday-card .switches").toggle();
+});
+
+$("#saturday-card .mdl-card__title").click(function(){
+    $(".switches").not("#saturday-card .switches").hide();
+    $("#saturday-card .switches").toggle();
+});
+
+$("#sunday-card .mdl-card__title").click(function(){
+    $(".switches").not("#sunday-card .switches").hide();
+    $("#sunday-card .switches").toggle();
 });
