@@ -36,6 +36,10 @@ $("#confirmation-dialog .yes").click(function() {
     localStorage.removeItem("weekHint");
     localStorage.removeItem("faqHint");
     localStorage.removeItem("settingsHint");
+	localStorage.removeItem("welcomeHintFAQ");
+	localStorage.removeItem("welcomeHintSwitches");
+	localStorage.removeItem("welcomeHintWeek");
+	
     $("#confirmation-dialog")[0].close();
 });
 

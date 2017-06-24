@@ -1,3 +1,4 @@
+
 // By default: hide all switches of all days
 $(".daysOfWeek").hide();
 $(".switchDefault").hide();
