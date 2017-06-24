@@ -33,3 +33,19 @@ $("#confirmation-dialog .yes").click(function() {
     localStorage.removeItem("settingsHint");
     $("#confirmation-dialog")[0].close();
 });
+
+$("#open-temp-unit").click(function(){
+    $("#temp-unit")[0].showModal();
+});
+
+$("#temp-unit .ok").click(function() {
+    $("#temp-unit")[0].close();
+});
+
+$("#open-threshold").click(function() {
+	$("#threshold")[0].showModal();
+});
+
+$("#threshold").click(function() {
+	$("#threshold")[0].close();
+});
