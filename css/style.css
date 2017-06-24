@@ -35,3 +35,11 @@ main {
     padding:0px;
     margin:0px;
 }
+
+.smaller-text {
+	font-size: 22px;
+}
+
+.temperature-size {
+	font-size: 42px;
+}
