@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_US">
 
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,9 @@
     
     <!-- Style Sheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- API Script -->
+    <script defer src="js/api.js"></script>
     
     <!-- Main Script -->
     <script defer src="js/week.js"></script>
@@ -77,24 +80,32 @@
         <main class="mdl-layout__content">
             <div class="mdl-grid">
             
-                <!-- Info Card -->
-                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            	<!-- Welcome Card -->
+                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <p>
-                            Here the temperatures for the day and nightmode can be set. 
+                            On this page the temperatures for the day and the night mode can be stored. Please keep in mind that these changes won't be in effect if the vacation mode is turned on!
 						</p>
                     </div>
-                    <div class="mdl-card__actions">
-                        
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect close">
+                            Dismiss
+                        </button>
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect delete">
+                            Don't show again
+                        </button>
                     </div>
                 </div>
+            
 
             	<!-- Day Temperature Card -->
             	<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
             		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text">
+                        <h4 class="mdl-card__title-text">
                             Day temperature
-                        </div>
+                        </h4>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered" >
@@ -119,9 +130,9 @@
                 <!-- Night Temperature Card -->
            		<div class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-card mdl-shadow--2dp">
             		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text">
+                        <h4 class="mdl-card__title-text">
                             Night temperature
-                        </div>
+                        </h4>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered" >

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_US">
 
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,9 @@
     
     <!-- Style Sheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- API Script -->
+    <script defer src="js/api.js"></script>
     
     <!-- Main Script -->
     <script defer src="js/switches.js"></script>
@@ -77,12 +80,22 @@
         <main class="mdl-layout__content">
             <div class="mdl-grid">
             
-                <!-- Info Card -->
-                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            	<!-- Welcome Card -->
+                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <p>
                             Beneath that the starting and ending times of the day program can be set. These can be different for each day. Extra switches per day can also be added below. The program temperatures have to be set in the week program page.
 						</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect close">
+                            Dismiss
+                        </button>
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect delete">
+                            Don't show again
+                        </button>
                     </div>
                 </div>
                 

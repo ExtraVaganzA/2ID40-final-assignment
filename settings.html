@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en_US">
 
 <head>
     <meta charset="utf-8">
@@ -19,6 +19,9 @@
     
     <!-- Style Sheet -->
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- API Script -->
+    <script defer src="js/api.js"></script>
     
     <!-- Main Script -->
     <script defer src="js/settings.js"></script>
@@ -77,23 +80,38 @@
         <main class="mdl-layout__content">
             <div class="mdl-grid">
             
-                <!-- Info Card -->
-                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                <!-- Hint -->
+                <div id="hint-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">
+                            Hint
+                        </h4>
+                    </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <p>
-                            Change the settings to your liking on this page!
-						</p>
+                            Here you can change the settings regarding this app.
+                        </p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect close">
+                            Dismiss
+                        </button>
+                        <button class="mdl-button mdl-js-button
+                        mdl-button--colored mdl-js-ripple-effect delete">
+                            Don't show again
+                        </button>
                     </div>
                 </div>
 				
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text" >
+                        <h4 class="mdl-card__title-text">
                             Temperature unit
-                        </div>
+                        </h4>
 					</div>
 					
-					<div class="mdl-card__supporting-text mdl-card--expand answers">
+					<div class="mdl-card__supporting-text mdl-card--expand">
 						<p>What temperature unit do you want to use?</p>
 						
 						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
@@ -101,8 +119,8 @@
 							<span class="mdl-radio__label">Celsius</span>
 						</label>
 						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-							<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2">
+						<label class="mdl-radio mdl-js-radio" for="option-2">
+							<input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" onclick="alert('unfortunately not possible');">
 						  	<span class="mdl-radio__label">Fahrenheit</span>
 						</label>
 					</div>
@@ -110,34 +128,12 @@
 				
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text" >
-                            Date format
-                        </div>
-					</div>
-					
-					<div class="mdl-card__supporting-text mdl-card--expand answers">
-						<p>What date format do you want to use?</p>
-						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
-							<input type="radio" id="option-3" class="mdl-radio__button" name="options2" value="1" checked>
-							<span class="mdl-radio__label">DD/MM/YYYY</span>
-						</label>
-						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
-							<input type="radio" id="option-4" class="mdl-radio__button" name="options2" value="2">
-						  	<span class="mdl-radio__label">MM/DD/YYYY</span>
-						</label>
-					</div>
-				</div>
-				
-				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
-            		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text" >
+                        <h4 class="mdl-card__title-text">
                             Threshold
-                        </div>
+                        </h4>
 					</div>
 					
-					<div class="mdl-card__supporting-text mdl-card--expand answers">
+					<div class="mdl-card__supporting-text mdl-card--expand">
 						<p>What temperature thresholds do you want to use?</p>
 						<p>Minimum temperature</p>: 
   						<div class="mdl-textfield mdl-js-textfield">
@@ -158,27 +154,41 @@
 				
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
-                        <div class="mdl-card__title-text" >
+                        <h4 class="mdl-card__title-text">
                             Hints
-                        </div>
+                        </h4>
 					</div>
 					
-					<div class="mdl-card__supporting-text mdl-card--expand answers">
-						<p>Do you want to reset the hints?</p>
+					<div class="mdl-card__supporting-text mdl-card--expand">
+						<p>Press the button to make hints appear again.</p>
 						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
-							<input type="radio" id="option-5" class="mdl-radio__button" name="options3" value="1" checked>
-							<span class="mdl-radio__label">No</span>
-						</label>
-						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
-							<input type="radio" id="option-6" class="mdl-radio__button" name="options3" value="2">
-						  	<span class="mdl-radio__label">Yes</span>
-						</label>
+						<button id="reset-hints-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+							Reset
+						</button>
 					</div>
 				</div>
-				
 			</div>
+            
+            <!-- Confirmation Dialog -->
+            <dialog id="confirmation-dialog" class="mdl-dialog">
+                <h4 class="mdl-dialog__title">
+                    Confirmation
+                </h4>
+                <div class="mdl-dialog__content">
+                    <p>
+                        Are you sure you want to reset the hints?
+                    </p>
+                </div>
+                <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                    <button class="mdl-button no">
+                        No
+                    </button>
+                    <button class="mdl-button yes">
+                        Yes
+                    </button>
+                </div>
+            </dialog>
+            
         </main>
     </div>
 </body>
