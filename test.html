@@ -79,7 +79,7 @@
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <div id="error-code"></div>
                         <hr>
-                        <div id="response"></div>
+                        <div id="response-raw"></div>
                     </div>
                     <div class="mdl-card__actions">
                     
@@ -101,7 +101,7 @@ function inputSend() {
 }
 
 function inputClear() {
-    $("#input").val(null);
+    $("#input-field")[0].MaterialTextfield.change("");
 }
 
 $("#input-send").click(inputSend);

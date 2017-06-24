@@ -81,7 +81,7 @@
             <div class="mdl-grid">
             
                 <!-- Welcome Card -->
-                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
+                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
                             Greetings!
@@ -105,15 +105,15 @@
                 </div>
                 
                 <!-- Status Card -->
-                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                <div id="status-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
                             Status
                         </h4>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <h4 id="day-time" class="slim-element">
-                            
+                        <h4 class="slim-element">
+                            <span class="value1"></span> - <span class="value2"></span>
                         <h4>
                     </div>
                 </div>
@@ -127,7 +127,9 @@
                     </div>
                     <div class="mdl-card__supporting-text">
                         <div class="invisible-fab"></div>
-                        <h2 class="centered"></h2>
+                        <h2 class="centered">
+                            <span class="value1"></span>&degC
+                        </h2>
                         <div class="invisible-fab"></div>
                     </div>
                     <div class="mdl-card__actions">
@@ -148,7 +150,9 @@
                                 add
                             </i>
                         </button>
-                        <h2 class="centered"></h2>
+                        <h2 class="centered">
+                            <span class="value1"></span>&degC
+                        </h2>
                         <button id="temp-minus" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered">
                             <i class="material-icons">
                                 remove
@@ -161,15 +165,15 @@
                 </div>
                 
                 <!-- Vacation Mode -->
-                <div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                <div id="vacation-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
                     <div class="mdl-card__supporting-text">
                         <div class="mdl-list__item">
                             <span class="mdl-list__item-primary-content">
                                 Vacation Mode
                             </span>
                             <span class="mdl-list__item-secondary-action">
-                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="vacation-checkbox">
-                                    <input type="checkbox" id="vacation-checkbox" class="mdl-switch__input"/>
+                                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="vacation-switch">
+                                    <input type="checkbox" id="vacation-switch" class="mdl-switch__input">
                                 </label>
                             </span>
                         </div>
