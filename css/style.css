@@ -5,14 +5,15 @@ main {
     background-color: #EEE;
 }
 
-/* Temperature Card Style */
-.temp-card .mdl-card__title-text {
-    /*text-align: center; /* to be decided */
-    height: 56px;
+/* Card Style */
+.mdl-card__supporting-text {
+    width: auto;
 }
 
-.temp-card h2 {
-    margin: 5px;
+/* Temperature Card Style */
+.temp-card h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 /* Misc Styles */
@@ -34,12 +35,4 @@ main {
 .slim-element {
     padding:0px;
     margin:0px;
-}
-
-.smaller-text {
-	font-size: 22px;
-}
-
-.temperature-size {
-	font-size: 42px;
 }
