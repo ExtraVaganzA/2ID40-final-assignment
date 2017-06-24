@@ -60,12 +60,6 @@
                     </i>
                     Week
                 </a>
-                <a class="mdl-navigation__link" href="./switches.html">
-                	<i class="material-icons">
-                		event
-					</i>
-               		Switches
-				</a>
                 <a class="mdl-navigation__link" href="./faq.html">
                     <i class="material-icons">
                         question_answer
@@ -86,7 +80,7 @@
         <main class="mdl-layout__content">
             <div class="mdl-grid">
             
-                <!-- Hint -->
+                <!-- Hint Card -->
                 <div id="hint-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
@@ -199,18 +193,24 @@
 				</dialog>
 						
 				<!-- Restore the hints -->
-				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+				<div id="hint-control-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
-                            Hints
+                            Hint Control
                         </h4>
 					</div>
 					
 					<div class="mdl-card__supporting-text mdl-card--expand">
-						<p>Press the button to make hints appear again.</p>
-						
-						<button id="reset-hints-button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-							Reset
+						<p>
+                            Press a button to enable or disable all the hints.
+                        </p>
+					</div>
+                    <div class="mdl-card__actions mdl-card--border">
+						<button class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect enable">
+							Enable
+						</button>
+                        <button class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect disable">
+							Disable
 						</button>
 					</div>
 				</div>

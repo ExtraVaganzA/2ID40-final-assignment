@@ -10,11 +10,11 @@ $("#hint-card .close").click(function(){
 });
 
 $("#hint-card .delete").click(function(){
-    localStorage.settingsHint = false;
+    localStorage.settingsHint = "false";
     $("#hint-card").hide();
 });
 
-$("#reset-hints-button").click(function(){
+$("#hint-control-card .enable").click(function(){
     $("#confirmation-dialog")[0].showModal();
 });
 
@@ -22,9 +22,19 @@ $("#confirmation-dialog .no").click(function() {
     $("#confirmation-dialog")[0].close();
 });
 
+function setHints(flag = "true") {
+    localStorage.setItem("homeHint", flag);
+    localStorage.setItem("vacationHint", flag);
+    localStorage.setItem("weekHint", flag);
+    localStorage.setItem("faqHint", flag);
+    localStorage.setItem("settingsHint", flag);
+}
+
 $("#confirmation-dialog .yes").click(function() {
-    localStorage.removeItem("welcomeHint");
-    localStorage.removeItem("vacationModeHint");
+    localStorage.removeItem("homeHint");
+    localStorage.removeItem("vacationHint");
+    localStorage.removeItem("weekHint");
+    localStorage.removeItem("faqHint");
     localStorage.removeItem("settingsHint");
     $("#confirmation-dialog")[0].close();
 });

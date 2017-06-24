@@ -53,23 +53,18 @@ $("#q4").on("click",function(){
     }
 });
 
-// Set local storage variables if this is the first visit.
-if (localStorage.welcomeHint === undefined) {
-    localStorage.welcomeHint = true;
-}
-
 // Element Manipulation
-if (localStorage.welcomeHint === "false") {
-    $("#welcome-card").hide();
+if (localStorage.faqHint === "false") {
+    $("#hint-card").hide();
 }
 
 // Click Functions
-$("#welcome-card .close").click(function(){
-    $("#welcome-card").hide();
+$("#hint-card .close").click(function(){
+    $("#hint-card").hide();
 });
 
-$("#welcome-card .delete").click(function(){
-    localStorage.welcomeHint = false;
-    $("#welcome-card").hide();
+$("#hint-card .delete").click(function(){
+    localStorage.faqHint = "false";
+    $("#hint-card").hide();
 });
 

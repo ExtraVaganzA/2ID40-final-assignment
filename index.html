@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css">
     
     <!-- API Script -->
-    <script type="text/javascript" src="js/api.js"></script>
+    <script defer src="js/api.js"></script>
     
     <!-- Main Script -->
     <script defer src="js/index.js"></script>
@@ -60,12 +60,6 @@
                     </i>
                     Week
                 </a>
-                <a class="mdl-navigation__link" href="./switches.html">
-                	<i class="material-icons">
-                		event
-					</i>
-               		Switches
-				</a>
                 <a class="mdl-navigation__link" href="./faq.html">
                     <i class="material-icons">
                         question_answer
@@ -86,8 +80,8 @@
         <main class="mdl-layout__content">
             <div class="mdl-grid">
             
-                <!-- Welcome Card -->
-                <div id="welcome-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+                <!-- Hint Card -->
+                <div id="hint-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
                             Greetings!
@@ -125,7 +119,7 @@
                 </div>
             
                 <!-- Current Temperature Card -->
-                <div id="current-temp-card" class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp temp-card">
+                <div id="current-temp-card" class="mdl-cell mdl-cell--2-col mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp temp-card">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
                             Current Temperature
@@ -144,14 +138,14 @@
                 </div>
                 
                 <!-- Target Temperature Card -->
-                <div id="target-temp-card" class="mdl-cell mdl-cell--4-col mdl-cell--2-col-phone mdl-card mdl-shadow--2dp temp-card">
+                <div id="target-temp-card" class="mdl-cell mdl-cell--2-col mdl-card mdl-shadow--2dp temp-card">
                     <div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
                             Target Temperature
                         </h4>
                     </div>
                     <div class="mdl-card__supporting-text">
-                        <button id="temp-plus" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect plus centered">
                             <i class="material-icons">
                                 add
                             </i>
@@ -159,7 +153,61 @@
                         <h2 class="centered">
                             <span class="value1"></span>&degC
                         </h2>
-                        <button id="temp-minus" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect centered">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect minus centered">
+                            <i class="material-icons">
+                                remove
+                            </i>
+                        </button>
+                    </div>
+                    <div class="mdl-card__actions">
+                        
+                    </div>
+                </div>
+                
+                <!-- Day Temperature Card -->
+                <div id="day-temp-card" class="mdl-cell mdl-cell--2-col mdl-card mdl-shadow--2dp temp-card">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">
+                            Day Temperature
+                        </h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect plus centered">
+                            <i class="material-icons">
+                                add
+                            </i>
+                        </button>
+                        <h2 class="centered">
+                            <span class="value1"></span>&degC
+                        </h2>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect minus centered">
+                            <i class="material-icons">
+                                remove
+                            </i>
+                        </button>
+                    </div>
+                    <div class="mdl-card__actions">
+                        
+                    </div>
+                </div>
+                
+                <!-- Night Temperature Card -->
+                <div id="night-temp-card" class="mdl-cell mdl-cell--2-col mdl-card mdl-shadow--2dp temp-card">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">
+                            Night Temperature
+                        </h4>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect plus centered">
+                            <i class="material-icons">
+                                add
+                            </i>
+                        </button>
+                        <h2 class="centered">
+                            <span class="value1"></span>&degC
+                        </h2>
+                        <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored mdl-js-ripple-effect minus centered">
                             <i class="material-icons">
                                 remove
                             </i>
@@ -185,6 +233,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             
             <!-- Vacation Mode Dialog -->
