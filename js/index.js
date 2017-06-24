@@ -1,43 +1,43 @@
 
-// Set local storage variables if this is the first visit.
-if (localStorage.welcomeHint === undefined) {
-    localStorage.welcomeHint = true;
+// Variables
+if (localStorage.targetTemp === undefined) {
+    localStorage.targetTemp = "21.0";
 }
 
-if (localStorage.vacationModeHint === undefined) {
-    localStorage.vacationModeHint = true;
+if (localStorage.weekProgramState === undefined) {
+    localStorage.weekProgramState = "on";
 }
+
+// Constants
+const daySelector = "#status-card .value1";
+const timeSelector = "#status-card .value2";
+
+const currentTempSelector = "#current-temp-card .value1";
+const targetTempSelector = "#target-temp-card .value1";
 
 // Element Manipulation
 if (localStorage.welcomeHint == "false") {
     $("#welcome-card").hide();
 }
 
-function update() {
-    getDay();
-    getTime();
-    
-    $("#day-time").html(day + " - " + time);
-    
-    getCurrentTemperature();
-    getTargetTemperature();
-    
-    $("#current-temp-card h2").html(currentTemperature + "&degC");
-    $("#target-temp-card h2").html(targetTemperature + "&degC");
-    
-    $("#temp-plus")[0].disabled = (targetTemperature >= 30);
-    $("#temp-minus")[0].disabled = (targetTemperature <= 5);
-    
-    getWeekProgramState();
-    
-    if (weekProgramState == "on") {
-        $("#vacation-checkbox")[0].checked = false;
-    } else {
-        $("#vacation-checkbox")[0].checked = true;
-    }
+if (localStorage.lastState == "off") {
+    $("#vacation-card input").prop("checked", true);
 }
 
-setInterval(function() {update();}, 500);
+function update() {
+    getDay(daySelector);
+    getTime(timeSelector);
+    
+    getCurrentTemperature(currentTempSelector);
+    getTargetTemperature(targetTempSelector);
+    
+    $("#temp-plus").prop("disabled", (parseInt(localStorage.targetTemperature) >= 30));
+    $("#temp-minus").prop("disabled", (parseInt(localStorage.targetTemperature) <= 5)); 
+    
+    getWeekProgramState();
+}
+
+setInterval(function() {update();}, 100);
 
 // Click Functions
 $("#welcome-card .close").click(function(){
@@ -49,23 +49,24 @@ $("#welcome-card .delete").click(function(){
     $("#welcome-card").hide();
 });
 
-
 $("#temp-plus").click(function(){
-    setTargetTemperature((parseInt(targetTemperature) + 1).toString());
+    setTargetTemperature((parseInt(localStorage.targetTemperature) + 1).toString());
 });
 
 $("#temp-minus").click(function(){
-    setTargetTemperature((parseInt(targetTemperature) - 1).toString());
+    setTargetTemperature((parseInt(localStorage.targetTemperature) - 1).toString());
 });
 
-$("#vacation-checkbox").click(function() {
-    if($("#vacation-checkbox")[0].checked) {
-        if (localStorage.vacationModeHint == "true") {
+$("#vacation-card input").click(function() {
+    if($("#vacation-card input").prop("checked")) {
+        if (localStorage.vacationModeHint != "false") {
             $("#vacation-dialog")[0].showModal();
         }
         
+        localStorage.lastState = "off"
         setWeekProgramState("off");
     } else {
+        localStorage.lastState = "on"
         setWeekProgramState("on");
     }
 });
@@ -75,6 +76,6 @@ $("#vacation-dialog .close").click(function() {
 });
 
 $("#vacation-dialog .delete").click(function() {
-    localStorage.vacationModeHint = false;
+    localStorage.vacationModeHint = "false";
     $("#vacation-dialog")[0].close();
 });

@@ -1,9 +1,4 @@
 
-// Set local storage variables if this is the first visit.
-if (localStorage.settingsHint === undefined) {
-    localStorage.settingsHint = true;
-}
-
 // Element Manipulation
 if (localStorage.settingsHint == "false") {
     $("#hint-card").hide();
