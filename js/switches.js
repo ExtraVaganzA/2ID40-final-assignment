@@ -81,22 +81,22 @@ $("#addSwitch").on("click",function(){
 });
 
 // Set local storage variables if this is the first visit.
-if (localStorage.welcomeHint === undefined) {
-    localStorage.welcomeHint = true;
+if (localStorage.welcomeHintSwitches === undefined) {
+    localStorage.welcomeHintSwitches = true;
 }
 
 // Element Manipulation
-if (localStorage.welcomeHint === "false") {
-    $("#welcome-card").hide();
+if (localStorage.welcomeHintSwitches === "false") {
+    $("#welcome-card-switches").hide();
 }
 
 // Click Functions
-$("#welcome-card .close").click(function(){
-    $("#welcome-card").hide();
+$("#welcome-card-switches .close").click(function(){
+    $("#welcome-card-switches").hide();
 });
 
-$("#welcome-card .delete").click(function(){
-    localStorage.welcomeHint = false;
-    $("#welcome-card").hide();
+$("#welcome-card-switches .delete").click(function(){
+    localStorage.welcomeHintSwitches = false;
+    $("#welcome-card-switches").hide();
 });
 

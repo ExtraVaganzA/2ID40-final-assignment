@@ -54,22 +54,22 @@ $("#q4").on("click",function(){
 });
 
 // Set local storage variables if this is the first visit.
-if (localStorage.welcomeHint === undefined) {
-    localStorage.welcomeHint = true;
+if (localStorage.welcomeHintFAQ === undefined) {
+    localStorage.welcomeHintFAQ = true;
 }
 
 // Element Manipulation
-if (localStorage.welcomeHint === "false") {
-    $("#welcome-card").hide();
+if (localStorage.welcomeHintFAQ === "false") {
+    $("#welcome-card-faq").hide();
 }
 
 // Click Functions
-$("#welcome-card .close").click(function(){
-    $("#welcome-card").hide();
+$("#welcome-card-faq .close").click(function(){
+    $("#welcome-card-faq").hide();
 });
 
-$("#welcome-card .delete").click(function(){
-    localStorage.welcomeHint = false;
-    $("#welcome-card").hide();
+$("#welcome-card-faq .delete").click(function(){
+    localStorage.welcomeHintFAQ = false;
+    $("#welcome-card-faq").hide();
 });
 
