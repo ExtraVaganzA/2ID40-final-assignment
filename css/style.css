@@ -11,6 +11,10 @@ main {
 }
 
 /* Temperature Card Style */
+.temp-card .mdl-card__title-text {
+    align-self: flex-start;
+}
+
 .temp-card h3 {
     margin-top: 8px;
     margin-bottom: 8px;

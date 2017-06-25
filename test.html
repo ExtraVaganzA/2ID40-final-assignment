@@ -66,6 +66,9 @@
                         <button id="input-clear" class="mdl-button mdl-js-button mdl-button--colored">
                             Clear
                         </button>
+                        <button id="input-test" class="mdl-button mdl-js-button mdl-button--colored">
+                            Test
+                        </button>
                     </div>
                 </div>
                 
@@ -106,6 +109,14 @@ function inputClear() {
 
 $("#input-send").click(inputSend);
 $("#input-clear").click(inputClear);
+
+$("#input-test").click(function() {
+    getThermostat("callback");
+});
+
+function callback(a, b, c) {
+    alert(a);
+}
 
 $("#input").keypress(function(event) {
     if (event.which == 13) {

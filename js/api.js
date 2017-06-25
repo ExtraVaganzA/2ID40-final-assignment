@@ -17,15 +17,15 @@ function setThermostat(respText = "#response-text", respRaw = "#response-raw", e
     });
 }
 
-function getThermostat(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getThermostat(funcName) {
     $.ajax({
         url : serverPath + id,
         type : "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.thermostat = xhr.responseText;
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[funcName](errCode, respRaw, respText);
         },
     });
 }
@@ -44,8 +44,6 @@ function deleteThermostat(respText = "#response-text", respRaw = "#response-raw"
 
 // Day
 function setDay(day, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.day = day;
-    
     $.ajax({
         url: serverPath + id + "day",
         type: "PUT",
@@ -74,8 +72,6 @@ function getDay(respText = "#response-text", respRaw = "#response-raw", errCode 
 
 // Time
 function setTime(time, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.time = time;
-    
     $.ajax({
         url: serverPath + id + "time",
         type: "PUT",
@@ -104,8 +100,6 @@ function getTime(respText = "#response-text", respRaw = "#response-raw", errCode
 
 // Current Temperature
 function setCurrentTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.currentTemperature = temperature;
-    
     $.ajax({
         url: serverPath + id + "currentTemperature",
         type: "PUT",
@@ -134,8 +128,6 @@ function getCurrentTemperature(respText = "#response-text", respRaw = "#response
 
 // Target Temperature
 function setTargetTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.targetTemperature = temperature;
-    
     $.ajax({
         url: serverPath + id + "targetTemperature",
         type: "PUT",
@@ -150,8 +142,7 @@ function setTargetTemperature(temperature, respText = "#response-text", respRaw 
 }
 
 function getTargetTemperature(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    return $.ajax({
-        async: false,
+    $.ajax({
         url: serverPath + id + "targetTemperature",
         type: "GET",
         complete: function(xhr, status) {
@@ -165,8 +156,6 @@ function getTargetTemperature(respText = "#response-text", respRaw = "#response-
 
 // Day Temperature
 function setDayTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.dayTemperature = temperature;
-    
     $.ajax({
         url: serverPath + id + "dayTemperature",
         type: "PUT",
@@ -195,8 +184,6 @@ function getDayTemperature(respText = "#response-text", respRaw = "#response-raw
 
 // Night Temperature
 function setNightTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.nightTemperature = temperature;
-    
     $.ajax({
         url: serverPath + id + "nightTemperature",
         type: "PUT",
@@ -225,8 +212,6 @@ function getNightTemperature(respText = "#response-text", respRaw = "#response-r
 
 // Week Program State
 function setWeekProgramState(state, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.weekProgramState = state;
-    
     $.ajax({
         url: serverPath + id + "weekProgramState",
         type: "PUT",
@@ -255,8 +240,6 @@ function getWeekProgramState(respText = "#response-text", respRaw = "#response-r
 
 // Week Program
 function setWeekProgram(program, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
-    localStorage.weekProgram = program;
-    
     $.ajax({
         url : serverPath + id + "weekProgram",
         type : "PUT",

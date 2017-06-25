@@ -1,36 +1,37 @@
 
-// Variables
-if (localStorage.weekProgramState === undefined) {
-    localStorage.weekProgramState = "on";
-}
-
-// Constants
-const daySelector = "#status-card .value1";
-const timeSelector = "#status-card .value2";
-
-const currentTempSelector = "#current-temp-card .value1";
-const targetTempSelector = "#target-temp-card .value1";
-const dayTempSelector = "#day-temp-card .value1";
-const nightTempSelector = "#night-temp-card .value1";
-
 // Element Manipulation
 if (localStorage.homeHint == "false") {
     $("#hint-card").hide();
 }
 
-if (localStorage.lastState == "off") {
+if (localStorage.weekProgramState == "off") {
     $("#vacation-card input").prop("checked", true);
 }
 
-function update() {
-    getDay(daySelector);
-    getTime(timeSelector);
+function updateVariables(errCode, respRaw, respText) {
+    var xml = $.parseXML(respRaw);
     
-    getCurrentTemperature(currentTempSelector);
-    getTargetTemperature(targetTempSelector);
-    getDayTemperature(dayTempSelector);
-    getNightTemperature(nightTempSelector);
+    // Update day and time.
+    localStorage.day = $(xml).find("current_day").text();
+    $("#status-card .value1").text(localStorage.day);
     
+    localStorage.time = $(xml).find("time").text();
+    $("#status-card .value2").text(localStorage.time);
+    
+    // Update temperatures.
+    localStorage.currentTemperature = $(xml).find("current_temperature").text();
+    $("#current-temp-card .value1").text(localStorage.currentTemperature);
+    
+    localStorage.targetTemperature = $(xml).find("target_temperature").text();
+    $("#target-temp-card .value1").text(localStorage.targetTemperature);
+    
+    localStorage.dayTemperature = $(xml).find("day_temperature").text();
+    $("#day-temp-card .value1").text(localStorage.dayTemperature);
+    
+    localStorage.nightTemperature = $(xml).find("night_temperature").text();
+    $("#night-temp-card .value1").text(localStorage.nightTemperature);
+    
+    // Update temperature buttons.
     $("#target-temp-card .plus").prop("disabled", (parseInt(localStorage.targetTemperature) >= 30));
     $("#target-temp-card .minus").prop("disabled", (parseInt(localStorage.targetTemperature) <= 5));
     
@@ -40,10 +41,11 @@ function update() {
     $("#night-temp-card .plus").prop("disabled", (parseInt(localStorage.nightTemperature) >= 30));
     $("#night-temp-card .minus").prop("disabled", (parseInt(localStorage.nightTemperature) <= 5)); 
     
-    getWeekProgramState();
 }
 
-setInterval(function() {update();}, 100);
+setInterval(function() {
+    getThermostat("updateVariables");
+}, 100);
 
 // Click Functions
 $("#hint-card .close").click(function(){
@@ -85,10 +87,10 @@ $("#vacation-card input").click(function() {
             $("#vacation-dialog")[0].showModal();
         }
         
-        localStorage.lastState = "off"
+        localStorage.weekProgramState = "off"
         setWeekProgramState("off");
     } else {
-        localStorage.lastState = "on"
+        localStorage.weekProgramState = "on"
         setWeekProgramState("on");
     }
 });
