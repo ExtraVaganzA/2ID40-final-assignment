@@ -58,7 +58,7 @@
                     <i class="material-icons">
                         date_range
                     </i>
-                    Week
+                    Week Program
                 </a>
                 <a class="mdl-navigation__link" href="./faq.html">
                     <i class="material-icons">
@@ -103,28 +103,56 @@
                         </button>
                     </div>
                 </div>
-				
-				<!-- The temperature setting -->
+                
+                <!-- Time Format Card -->
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
-                            Temperature unit
+                            Time Format
                         </h4>
 					</div>
 					<div class="mdl-card__supporting-text mdl-card--expand">
-						<p>What temperature unit do you want to use?</p>
-						
-						<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
-							<input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked>
-							<span class="mdl-radio__label">Celsius</span>
+						<p>
+                            What time format do you want to use?
+                        </p>
+						<label class="mdl-radio mdl-js-radio option">
+							<input type="radio" class="mdl-radio__button" name="time-format" value="1" checked disabled>
+							<span class="mdl-radio__label">24-hour</span>
 						</label>
-						
-						<label class="mdl-radio mdl-js-radio" for="option-2">
-							<input type="radio" class="mdl-radio__button" name="options" value="2">
-						  	<span class="mdl-radio__label" id="open-temp-unit">Fahrenheit</span>
+						<label class="mdl-radio mdl-js-radio option">
+							<input type="radio" class="mdl-radio__button" name="time-format" value="2" disabled>
+						  	<span class="mdl-radio__label">12-hour</span>
 						</label>
 					</div>
-				</div>           
+                    <div class="mdl-card__actions">
+
+                    </div>
+				</div>
+                
+				<!-- Temperature Card -->
+				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
+            		<div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">
+                            Temperature Unit
+                        </h4>
+					</div>
+					<div class="mdl-card__supporting-text mdl-card--expand">
+						<p>
+                            What temperature unit do you want to use?
+                        </p>
+						<label class="mdl-radio mdl-js-radio option">
+							<input type="radio" class="mdl-radio__button" name="temp-unit" value="1" checked disabled>
+							<span class="mdl-radio__label">Celsius</span>
+						</label>
+						<label class="mdl-radio mdl-js-radio option">
+							<input type="radio" class="mdl-radio__button" name="temp-unit" value="2" disabled>
+						  	<span class="mdl-radio__label">Fahrenheit</span>
+						</label>
+					</div>
+                    <div class="mdl-card__actions">
+
+                    </div>
+				</div>
 				
 				<!-- The temperature thresholds setting -->
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
@@ -136,24 +164,35 @@
 					
 					<div class="mdl-card__supporting-text mdl-card--expand">
 						<p>What temperature thresholds do you want to use?</p>
-						<p>Minimum temperature: 
-  						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2">
-							<label class="mdl-textfield__label" for="sample2">Number...</label>
-							<span class="mdl-textfield__error">Input is not a number!</span>
-						</div></p>
-					  	
-						<p>Maximum temperature:
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample3" style="float: right">
-							<label class="mdl-textfield__label" for="sample3">Number...</label>
-							<span class="mdl-textfield__error">Input is not a number!</span>
-					</div></p>
-					
-					<button id="open-threshold" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
-							Save
-					</button>
-					
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="mdl-textfield mdl-js-textfield option">
+                                        <input class="mdl-textfield__input" type="tel" pattern="(-?|\+?)[0-9]*(\.[0-9]+)?">
+                                        <label class="mdl-textfield__label">
+                                            Min temp.
+                                        </label>
+                                        <span class="mdl-textfield__error">Not a number!</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="mdl-textfield mdl-js-textfield option">
+                                        <input class="mdl-textfield__input" type="tel" pattern="(-?|\+?)[0-9]*(\.[0-9]+)?">
+                                        <label class="mdl-textfield__label">
+                                            Max temp.
+                                        </label>
+                                        <span class="mdl-textfield__error">Not a number!</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon" disabled>
+                                        <i class="material-icons">
+                                            save
+                                        </i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
 					</div>
 				</div>
                 

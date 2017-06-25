@@ -38,6 +38,16 @@ main {
     padding-right: 6px;
 }
 
+/* Option Card Syles */
+.mdl-card .option {
+    margin-right: 16px;
+}
+
+.mdl-card .option.mdl-textfield {
+    width: auto;
+    margin-right: 0px;
+}
+
 /* Misc Styles */
 .centered {
     display: block;

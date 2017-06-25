@@ -139,11 +139,11 @@ function getProgram() {
     for(var i = 0; i < 7; i++) {
         output += "<day name='" + dayNames[i] + "'>";
         
-        var switchNumber = $(".switches:eq(" + i + ") tr:has(.remove)").length;
+        var switchList = $(".switches:eq(" + i + ") tr:has(.remove)");
         
-        for(var j = 0; j < switchNumber; j++) {
-            var startTime = $(".switches:eq(" + i + ") tr:has(.remove):eq(" + j + ") td:eq(0)").text();
-            var endTime = $(".switches:eq(" + i + ") tr:has(.remove):eq(" + j + ") td:eq(1)").text();
+        for(var j = 0; j < switchList.length; j++) {
+            var startTime = switchList.eq(j).find("td:eq(0)").text();
+            var endTime = switchList.eq(j).find("td:eq(1)").text();
             
             output +=
                 "<switch type='day' state='on'>" +
@@ -154,7 +154,7 @@ function getProgram() {
                 "</switch>";
         }
         
-        for(var j = 0; j < 5 - switchNumber; j++) {
+        for(var j = 0; j < 5 - switchList.length; j++) {
             output +=
                 "<switch type='day' state='off'>" +
                     "00:00" +
