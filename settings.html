@@ -111,7 +111,6 @@
                             Temperature unit
                         </h4>
 					</div>
-					
 					<div class="mdl-card__supporting-text mdl-card--expand">
 						<p>What temperature unit do you want to use?</p>
 						
@@ -125,24 +124,7 @@
 						  	<span class="mdl-radio__label" id="open-temp-unit">Fahrenheit</span>
 						</label>
 					</div>
-				</div>
-				
-				<!-- Feedback Dialog for Temperature Unit -->
-				<dialog id="temp-unit" class="mdl-dialog">
-					<h4 class="mdl-dialog__title">
-						Confirmation
-					</h4>
-					<div class="mdl-dialog__content">
-						<p>
-							Unfortunately it is not yet possible to change the temperature unit to Fahrenheit.
-						</p>
-					</div>
-					<div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-						<button class="mdl-button ok">
-							Ok
-						</button>
-					</div>
-				</dialog>            
+				</div>           
 				
 				<!-- The temperature thresholds setting -->
 				<div class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
@@ -174,25 +156,8 @@
 					
 					</div>
 				</div>
-				
-				<!-- Feedback dialog for temperature thresholds -->
-				<dialog id="threshold" class="mdl-dialog">
-					<h4 class="mdl-dialog__title">
-						Confirmation
-					</h4>
-					<div class="mdl-dialog__content">
-						<p>
-						As per the assignment instructions, changing the temperature thresholds is not possible.
-						</p>
-					</div>
-					<div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-						<button class="mdl-button ok">
-							Ok
-						</button>
-					</div>
-				</dialog>
-						
-				<!-- Restore the hints -->
+                
+                <!-- Restore the hints -->
 				<div id="hint-control-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
                         <h4 class="mdl-card__title-text">
@@ -214,29 +179,50 @@
 						</button>
 					</div>
 				</div>
-			</div>
-            
-            <!-- Confirmation Dialog -->
-            <dialog id="confirmation-dialog" class="mdl-dialog">
-                <h4 class="mdl-dialog__title">
-                    Confirmation
-                </h4>
-                <div class="mdl-dialog__content">
-                    <p>
-                        Are you sure you want to reset the hints?
-                    </p>
-                </div>
-                <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
-                    <button class="mdl-button no">
-                        No
-                    </button>
-                    <button class="mdl-button yes">
-                        Yes
-                    </button>
-                </div>
-            </dialog>
-            
+                
+            </div>
         </main>
+        
+        <!-- Hint Enable Confirmation Dialog -->
+        <dialog id="hint-enable-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to re-enable all the hints?
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+        
+        <!-- Hint Disable Confirmation Dialog -->
+        <dialog id="hint-disable-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to disable all the hints?
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+    
     </div>
 </body>
 

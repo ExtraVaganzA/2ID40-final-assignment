@@ -14,47 +14,41 @@ $("#hint-card .delete").click(function(){
     $("#hint-card").hide();
 });
 
+
 $("#hint-control-card .enable").click(function(){
-    $("#confirmation-dialog")[0].showModal();
+    $("#hint-enable-dialog")[0].showModal();
 });
 
-$("#confirmation-dialog .no").click(function() {
-    $("#confirmation-dialog")[0].close();
+$("#hint-control-card .disable").click(function(){
+    $("#hint-disable-dialog")[0].showModal();
 });
 
-function setHints(flag = "true") {
-    localStorage.setItem("homeHint", flag);
-    localStorage.setItem("vacationHint", flag);
-    localStorage.setItem("weekHint", flag);
-    localStorage.setItem("faqHint", flag);
-    localStorage.setItem("settingsHint", flag);
-}
 
-$("#confirmation-dialog .yes").click(function() {
+$("#hint-enable-dialog .no").click(function() {
+    $("#hint-enable-dialog")[0].close();
+});
+
+$("#hint-enable-dialog .yes").click(function() {
     localStorage.removeItem("homeHint");
     localStorage.removeItem("vacationHint");
     localStorage.removeItem("weekHint");
     localStorage.removeItem("faqHint");
     localStorage.removeItem("settingsHint");
-	localStorage.removeItem("welcomeHintFAQ");
-	localStorage.removeItem("welcomeHintSwitches");
-	localStorage.removeItem("welcomeHintWeek");
 	
-    $("#confirmation-dialog")[0].close();
+    $("#hint-enable-dialog")[0].close();
 });
 
-$("#open-temp-unit").click(function(){
-    $("#temp-unit")[0].showModal();
+
+$("#hint-disable-dialog .no").click(function() {
+    $("#hint-disable-dialog")[0].close();
 });
 
-$("#temp-unit .ok").click(function() {
-    $("#temp-unit")[0].close();
-});
-
-$("#open-threshold").click(function() {
-	$("#threshold")[0].showModal();
-});
-
-$("#threshold").click(function() {
-	$("#threshold")[0].close();
+$("#hint-disable-dialog .yes").click(function() {
+    localStorage.homeHint = "false";
+    localStorage.vacationHint = "false";
+    localStorage.weekHint = "false";
+    localStorage.faqHint = "false";
+    localStorage.settingsHint = "false";
+	
+    $("#hint-disable-dialog")[0].close();
 });

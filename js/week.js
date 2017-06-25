@@ -109,6 +109,69 @@ function updateButtons() {
     }
 }
 
+// Program Control
+function setProgram(errCode, respRaw, respText) {
+    $("tr").has(".remove").remove();
+    
+    var xml = $.parseXML(respRaw);
+    var dayNames = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"];
+    var dayList = $(xml).find("day");
+    
+    for (var i = 0; i < 7; i++) {
+        var daySwitches = dayList.eq(i).find("switch[type='day'][state='on']");
+        var nightSwitches = dayList.eq(i).find("switch[type='night'][state='on']");
+        
+        var switchNumber = daySwitches.length < nightSwitches.length ? daySwitches.length : nightSwitches.length;
+        
+        for (var j = 0; j < switchNumber; j++) {
+            addSwitch(dayNames[i], daySwitches.eq(j).text(), nightSwitches.eq(j).text());
+        }
+    }
+    
+    updateButtons();
+}
+
+function getProgram() {
+    var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    
+    var output = "<week_program state='on'>";
+    
+    for(var i = 0; i < 7; i++) {
+        output += "<day name='" + dayNames[i] + "'>";
+        
+        var switchNumber = $(".switches:eq(" + i + ") tr:has(.remove)").length;
+        
+        for(var j = 0; j < switchNumber; j++) {
+            var startTime = $(".switches:eq(" + i + ") tr:has(.remove):eq(" + j + ") td:eq(0)").text();
+            var endTime = $(".switches:eq(" + i + ") tr:has(.remove):eq(" + j + ") td:eq(1)").text();
+            
+            output +=
+                "<switch type='day' state='on'>" +
+                    startTime +
+                "</switch>" +
+                "<switch type='night' state='on'>" +
+                    endTime +
+                "</switch>";
+        }
+        
+        for(var j = 0; j < 5 - switchNumber; j++) {
+            output +=
+                "<switch type='day' state='off'>" +
+                    "00:00" +
+                "</switch>" +
+                "<switch type='night' state='off'>" +
+                    "00:00" +
+                "</switch>";
+        }
+        
+        output += "</day>";
+    }
+    
+    output += "</week_program>";
+    
+    return output;
+}
+
 // Click Functions
 $("#hint-card .close").click(function(){
     $("#hint-card").hide();
@@ -333,4 +396,67 @@ $(document).on("click", "tr .remove", function(){
     $("tr").has(this).remove();
     
     updateButtons();
+});
+
+
+$("#file-menu .save").click(function() {
+    $("#save-dialog")[0].showModal();
+});
+
+$("#file-menu .load").click(function() {
+    $("#load-dialog")[0].showModal();
+});
+
+$("#file-menu .download").click(function() {
+    $("#download-dialog")[0].showModal();
+});
+
+$("#file-menu .upload").click(function() {
+    $("#upload-dialog")[0].showModal();
+});
+
+
+$("#save-dialog .no").click(function() {
+    $("#save-dialog")[0].close();
+});
+
+$("#save-dialog .yes").click(function() {
+    localStorage.weekProgram = getProgram();
+    localStorage.weekProgramState = "on";
+    localStorage.lastState = "on";
+    
+    $("#save-dialog")[0].close();
+});
+
+
+$("#load-dialog .no").click(function() {
+    $("#load-dialog")[0].close();
+});
+
+$("#load-dialog .yes").click(function() {
+    setProgram("", localStorage.weekProgram, "");
+    
+    $("#load-dialog")[0].close();
+});
+
+
+$("#download-dialog .no").click(function() {
+    $("#download-dialog")[0].close();
+});
+
+$("#download-dialog .yes").click(function() {
+    getWeekProgram("setProgram");
+    
+    $("#download-dialog")[0].close();
+});
+
+
+$("#upload-dialog .no").click(function() {
+    $("#upload-dialog")[0].close();
+});
+
+$("#upload-dialog .yes").click(function() {
+    setWeekProgram(getProgram());
+    
+    $("#upload-dialog")[0].close();
 });

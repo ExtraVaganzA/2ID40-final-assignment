@@ -38,6 +38,12 @@
                 <span class="mdl-layout__title">
                     Week Program
                 </span>
+                <div class="mdl-layout-spacer"></div>
+                <button id="file-menu" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">
+                        more_vert
+                    </i>
+                </button>
             </div>
         </header>
         
@@ -75,6 +81,22 @@
             </nav>
         </div>
         
+        <!-- File Menu -->
+        <ul id="file-menu" class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="file-menu">
+            <li class="mdl-menu__item save">
+                Save to device
+            </li>
+            <li class="mdl-menu__item load">
+                Load from device
+            </li>
+            <li class="mdl-menu__item download">
+                Download from server
+            </li>
+            <li class="mdl-menu__item upload">
+                Upload to server
+            </li>
+        </ul>
+        
         <!-- Page Content -->
         <main class="mdl-layout__content">
             <div class="mdl-grid">
@@ -102,6 +124,7 @@
                         </button>
                     </div>
                 </div>
+                
                 
             	<div id="monday-card" class="mdl-cell mdl-cell--8-col mdl-cell--4-col-phone mdl-cell--2-offset-desktop mdl-card mdl-shadow--2dp slim-card">
             		<div class="mdl-card__title">
@@ -499,6 +522,87 @@
 				
 			</div>
         </main>
+        
+        <!-- Save Confirmation Dialog -->
+        <dialog id="save-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to overwrite the stored program?
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+        
+        <!-- Load Confirmation Dialog -->
+        <dialog id="load-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to load the stored program? Changes will be discarded.
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+        
+        <!-- Download Confirmation Dialog -->
+        <dialog id="download-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to download the active program from the server? Changes will be discarded.
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+        
+        <!-- Upload Confirmation Dialog -->
+        <dialog id="upload-dialog" class="mdl-dialog">
+            <h4 class="mdl-dialog__title">
+                Confirmation
+            </h4>
+            <div class="mdl-dialog__content">
+                <p>
+                    Are you sure you want to overwrite the active program of the server?
+                </p>
+            </div>
+            <div class="mdl-dialog__actions mdl-dialog__actions--full-width">
+                <button class="mdl-button no">
+                    No
+                </button>
+                <button class="mdl-button yes">
+                    Yes
+                </button>
+            </div>
+        </dialog>
+        
     </div>
 </body>
 
