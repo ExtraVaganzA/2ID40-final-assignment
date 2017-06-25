@@ -5,19 +5,20 @@ const id = "26/";
 
 // Functions
 // Thermostat
-function setThermostat(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setThermostat(callback = "") {
     $.ajax({
         url: serverPath + id,
         type: "PUT",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getThermostat(funcName) {
+function getThermostat(callback = "") {
     $.ajax({
         url : serverPath + id,
         type : "GET",
@@ -25,243 +26,252 @@ function getThermostat(funcName) {
             var errCode = "(" + xhr.status + ") " + xhr.statusText;
             var respRaw = xhr.responseText;
             var respText = $(xhr.responseXML).text();
-            window[funcName](errCode, respRaw, respText);
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function deleteThermostat(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function deleteThermostat(callback = "") {
     $.ajax({
         url : serverPath + id,
         type : "DELETE",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Day
-function setDay(day, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setDay(day, callback = "") {
     $.ajax({
         url: serverPath + id + "day",
         type: "PUT",
         data: "<current_day>" + day + "</current_day>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getDay(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getDay(callback = "") {
     $.ajax({
         url: serverPath + id + "day",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.day = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Time
-function setTime(time, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setTime(time, callback = "") {
     $.ajax({
         url: serverPath + id + "time",
         type: "PUT",
         data: "<time>" + time + "</time>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getTime(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getTime(callback = "") {
     $.ajax({
         url: serverPath + id + "time",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.time = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Current Temperature
-function setCurrentTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setCurrentTemperature(temperature, callback = "") {
     $.ajax({
         url: serverPath + id + "currentTemperature",
         type: "PUT",
         data: "<current_temperature>" + temperature + "</current_temperature>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getCurrentTemperature(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getCurrentTemperature(callback = "") {
     $.ajax({
         url: serverPath + id + "currentTemperature",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.currentTemperature = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Target Temperature
-function setTargetTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setTargetTemperature(temperature, callback = "") {
     $.ajax({
         url: serverPath + id + "targetTemperature",
         type: "PUT",
         data: "<target_temperature>" + temperature + "</target_temperature>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getTargetTemperature(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getTargetTemperature(callback = "") {
     $.ajax({
         url: serverPath + id + "targetTemperature",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.targetTemperature = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Day Temperature
-function setDayTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setDayTemperature(temperature, callback = "") {
     $.ajax({
         url: serverPath + id + "dayTemperature",
         type: "PUT",
         data: "<day_temperature>" + temperature + "</day_temperature>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getDayTemperature(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getDayTemperature(callback = "") {
     $.ajax({
         url: serverPath + id + "dayTemperature",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.dayTemperature = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Night Temperature
-function setNightTemperature(temperature, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setNightTemperature(temperature, callback = "") {
     $.ajax({
         url: serverPath + id + "nightTemperature",
         type: "PUT",
         data: "<night_temperature>" + temperature + "</night_temperature>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getNightTemperature(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getNightTemperature(callback = "") {
     $.ajax({
         url: serverPath + id + "nightTemperature",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.nightTemperature = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Week Program State
-function setWeekProgramState(state, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setWeekProgramState(state, callback = "") {
     $.ajax({
         url: serverPath + id + "weekProgramState",
         type: "PUT",
         data: "<week_program_state>" + state + "</week_program_state>",
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getWeekProgramState(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getWeekProgramState(callback = "") {
     $.ajax({
         url: serverPath + id + "weekProgramState",
         type: "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.weekProgramState = $(xhr.responseXML).text();
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
 // Week Program
-function setWeekProgram(program, respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function setWeekProgram(program, callback = "") {
     $.ajax({
         url : serverPath + id + "weekProgram",
         type : "PUT",
         data: program,
         contentType: "xml",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }
 
-function getWeekProgram(respText = "#response-text", respRaw = "#response-raw", errCode = "#error-code") {
+function getWeekProgram(callback = "") {
     $.ajax({
         url : serverPath + id + "weekProgram",
         type : "GET",
         complete: function(xhr, status) {
-            $(errCode).text("(" + xhr.status + ") " + xhr.statusText);
-            $(respRaw).text(xhr.responseText);
-            $(respText).text($(xhr.responseXML).text());
-            localStorage.weekProgram = xhr.responseText;
+            var errCode = "(" + xhr.status + ") " + xhr.statusText;
+            var respRaw = xhr.responseText;
+            var respText = $(xhr.responseXML).text();
+            window[callback](errCode, respRaw, respText);
         },
     });
 }

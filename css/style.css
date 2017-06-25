@@ -29,22 +29,13 @@ main {
     margin: auto;
 }
 
-/*.switches td {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    border: none;
-}
-
-.switches td:first-of-type {
-    padding-left: 0px;
-}
-
-.switches td:last-of-type {
-    padding-right: 0px;
-}*/
-
 .switches .mdl-textfield {
     width: auto;
+}
+
+.day-table td {
+    padding-left: 6px;
+    padding-right: 6px;
 }
 
 /* Misc Styles */

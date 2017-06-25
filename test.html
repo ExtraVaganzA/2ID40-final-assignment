@@ -53,10 +53,11 @@
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <div id="input-field" class="mdl-textfield mdl-js-textfield">
-                            <input class="mdl-textfield__input" type="text" id="input">
+                            <input class="mdl-textfield__input" type="text" id="input" pattern="[A-Z,a-z]*\((.)*\)">
                             <label class="mdl-textfield__label" for="input">
-                                Type the function (e.g. func(arg1, ...)).
+                                Type the function (e.g. func(arg)).
                             </label>
+                            <span class="mdl-textfield__error">Invalid format.</span>
                         </div>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
@@ -66,8 +67,8 @@
                         <button id="input-clear" class="mdl-button mdl-js-button mdl-button--colored">
                             Clear
                         </button>
-                        <button id="input-test" class="mdl-button mdl-js-button mdl-button--colored">
-                            Test
+                        <button id="input-status" class="mdl-button mdl-js-button mdl-button--colored">
+                            Status
                         </button>
                     </div>
                 </div>
@@ -82,7 +83,7 @@
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <div id="error-code"></div>
                         <hr>
-                        <div id="response-raw"></div>
+                        <div id="response"></div>
                     </div>
                     <div class="mdl-card__actions">
                     
@@ -99,7 +100,22 @@
 //
 
 function inputSend() {
-    eval($("#input").val());
+    var inputStr = $("#input").val();
+    
+    var b1 = inputStr.indexOf("(");
+    var b2 = inputStr.indexOf(")");
+    
+    var func = inputStr.substring(0, b1);
+    var arg = inputStr.substring(b1 + 1, b2);
+
+    if (arg == "") {
+        window[func]("callback");
+    } else {
+        arg = arg.replace(/^[\"\']?|[\"\']?$/g, "");
+        
+        window[func](arg, "callback");
+    }
+    
     inputClear();
 }
 
@@ -109,13 +125,13 @@ function inputClear() {
 
 $("#input-send").click(inputSend);
 $("#input-clear").click(inputClear);
-
-$("#input-test").click(function() {
+$("#input-status").click(function() {
     getThermostat("callback");
 });
 
-function callback(a, b, c) {
-    alert(a);
+function callback(errCode, respRaw, respText) {
+    $("#error-code").text(errCode);
+    $("#response").text(respRaw);
 }
 
 $("#input").keypress(function(event) {
