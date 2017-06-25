@@ -50,3 +50,66 @@ $("#sunday-card .mdl-card__title").click(function(){
     $(".switches").not("#sunday-card .switches").hide();
     $("#sunday-card .switches").toggle();
 });
+
+// Switch Control
+function validateInput(startTimeSelector, endTimeSelector) {
+    if ($(startTimeSelector + " input").val() == "") {
+        alert("Please enter the start time.");
+        return false;
+    }
+    
+    if ($(endTimeSelector + " input").val() == "") {
+        alert("Please enter the end time.");
+        return false;
+    }
+    
+    if ($(startTimeSelector).hasClass("is-invalid")) {
+        alert("The start time is invalid.");
+        return false;
+    }
+    
+    if ($(endTimeSelector).hasClass("is-invalid")) {
+        alert("The end time is invalid.");
+        return false;
+    }
+    
+    return true;
+}
+
+function addSwitch(day, startTime, endTime) {
+    $("#" + day + "-card tr:last").before(
+        "<tr>" +
+            "<td>" +
+                startTime +
+            "</td>" +
+            "<td>" +
+                endTime +
+            "</td>" +
+            "<td>" +
+                "<button class='mdl-button mdl-js-button mdl-button--icon mdl-button--colored remove'>" +
+                    "<i class='material-icons'>" +
+                        "remove_circle" +
+                    "</i>" +
+                "</button>" +
+            "</td>" +
+        "</tr>"
+    );
+}
+
+$("#monday-card .add").click(function(){
+    if (!validateInput("#monday-card .start-time", "#monday-card .end-time")) {
+        return;
+    }
+    
+    var startTime = $("#monday-card .start-time input").val();
+    var endTime = $("#monday-card .end-time input").val();
+    
+    $("#monday-card .start-time")[0].MaterialTextfield.change("");
+    $("#monday-card .end-time")[0].MaterialTextfield.change("");
+    
+    addSwitch("monday", startTime, endTime);
+});
+
+$(document).on("click", "tr .remove", function(){
+    $("tr").has(this).remove();
+});

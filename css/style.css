@@ -20,13 +20,16 @@ main {
     margin-bottom: 8px;
 }
 
-/* Switches Style */
-.switches table {
-    width: 100%;
-    border: none;
+.temp-card .mdl-button--fab {
+    margin-left: 12px;
 }
 
-.switches td {
+/* Switches Style */
+.switches table {
+    margin: auto;
+}
+
+/*.switches td {
     padding-top: 0px;
     padding-bottom: 0px;
     border: none;
@@ -38,7 +41,7 @@ main {
 
 .switches td:last-of-type {
     padding-right: 0px;
-}
+}*/
 
 .switches .mdl-textfield {
     width: auto;

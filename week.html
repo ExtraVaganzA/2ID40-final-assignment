@@ -88,7 +88,7 @@
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand">
                         <p>
-                            Below you can view and set the time periods for which the day temperature applies. Every day has an independent setting. The program temperatures have to be set in the home page.
+                            Below you can view and set the time periods for which the day temperature applies. Every day can have independent switches, maximum 5 per day. <b>Do not overlap the time periods!</b>
 						</p>
                     </div>
                     <div class="mdl-card__actions mdl-card--border">
@@ -110,110 +110,36 @@
                         </div>
 					</div>
 					<div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -227,110 +153,36 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -344,110 +196,36 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -461,110 +239,36 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -578,110 +282,36 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -695,110 +325,36 @@
                         </div>
                     </div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>
@@ -812,110 +368,36 @@
                         </div>
 					</div>
                     <div class="mdl-card__supporting-text mdl-card--expand switches">
-                        <table class="mdl-data-table mdl-js-data-table">
-                            <tr class="value1">
+                        <table>
+                            <tr>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label start-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            Start time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label end-time">
+                                        <input type="tel" class="mdl-textfield__input" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]">
+                                        <label class="mdl-textfield__label">
+                                            End time:
+                                        </label>
+                                        <span class="mdl-textfield__error">
+                                            Invalid format
+                                        </span>
                                     </div>
                                 </td>
                                 <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value2">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value3">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value4">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
-                                </td>
-                            </tr>
-                            <tr class="value5">
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="start-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="start-time">Start time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                        <input type="text" id="end-time" class="mdl-textfield__input">
-                                        <label class="mdl-textfield__label" for="end-time">End time:</label>
-                                        <span class="mdl-textfield__error">Invalid format</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect">
-                                        <input type="checkbox" class="mdl-checkbox__input">
-                                    </label>
+                                    <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored add">
+                                        <i class="material-icons">
+                                            add_circle
+                                        </i>
+                                    </button>
                                 </td>
                             </tr>
                         </table>

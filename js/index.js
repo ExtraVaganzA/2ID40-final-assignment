@@ -32,53 +32,73 @@ function updateVariables(errCode, respRaw, respText) {
     $("#night-temp-card .value1").text(localStorage.nightTemperature);
     
     // Update temperature buttons.
-    $("#target-temp-card .plus").prop("disabled", (parseInt(localStorage.targetTemperature) >= 30));
-    $("#target-temp-card .minus").prop("disabled", (parseInt(localStorage.targetTemperature) <= 5));
+    $("#target-temp-card .plus").prop("disabled", (parseFloat(localStorage.targetTemperature) > 29.0));
+    $("#target-temp-card .plus-small").prop("disabled", (parseFloat(localStorage.targetTemperature) >= 30.0));
+    $("#target-temp-card .minus").prop("disabled", (parseFloat(localStorage.targetTemperature) < 6.0));
+    $("#target-temp-card .minus-small").prop("disabled", (parseFloat(localStorage.targetTemperature) <= 5.0));
     
-    $("#day-temp-card .plus").prop("disabled", (parseInt(localStorage.dayTemperature) >= 30));
-    $("#day-temp-card .minus").prop("disabled", (parseInt(localStorage.dayTemperature) <= 5)); 
+    $("#day-temp-card .plus").prop("disabled", (parseFloat(localStorage.dayTemperature) > 29.0));
+    $("#day-temp-card .plus-small").prop("disabled", (parseFloat(localStorage.dayTemperature) >= 30.0));
+    $("#day-temp-card .minus").prop("disabled", (parseFloat(localStorage.dayTemperature) < 6.0));
+    $("#day-temp-card .minus-small").prop("disabled", (parseFloat(localStorage.dayTemperature) <= 5.0)); 
     
-    $("#night-temp-card .plus").prop("disabled", (parseInt(localStorage.nightTemperature) >= 30));
-    $("#night-temp-card .minus").prop("disabled", (parseInt(localStorage.nightTemperature) <= 5)); 
+    $("#night-temp-card .plus").prop("disabled", (parseFloat(localStorage.nightTemperature) > 29.0));
+    $("#night-temp-card .plus-small").prop("disabled", (parseFloat(localStorage.nightTemperature) >= 30.0));
+    $("#night-temp-card .minus").prop("disabled", (parseFloat(localStorage.nightTemperature) < 6.0));
+    $("#night-temp-card .minus-small").prop("disabled", (parseFloat(localStorage.nightTemperature) <= 5.0));
     
 }
 
 setInterval(function() {
     getThermostat("updateVariables");
-}, 100);
+}, 200);
 
 // Click Functions
 $("#hint-card .close").click(function(){
     $("#hint-card").hide();
 });
-
 $("#hint-card .delete").click(function(){
     localStorage.homeHint = false;
     $("#hint-card").hide();
 });
 
 $("#target-temp-card .plus").click(function(){
-    setTargetTemperature((parseInt(localStorage.targetTemperature) + 1).toString());
+    setTargetTemperature((parseFloat(localStorage.targetTemperature) + 1.0).toString());
 });
-
+$("#target-temp-card .plus-small").click(function(){
+    setTargetTemperature((parseFloat(localStorage.targetTemperature) + 0.1).toString());
+});
 $("#target-temp-card .minus").click(function(){
-    setTargetTemperature((parseInt(localStorage.targetTemperature) - 1).toString());
+    setTargetTemperature((parseFloat(localStorage.targetTemperature) - 1.0).toString());
+});
+$("#target-temp-card .minus-small").click(function(){
+    setTargetTemperature((parseFloat(localStorage.targetTemperature) - 0.1).toString());
 });
 
 $("#day-temp-card .plus").click(function(){
-    setDayTemperature((parseInt(localStorage.dayTemperature) + 1).toString());
+    setDayTemperature((parseFloat(localStorage.dayTemperature) + 1.0).toString());
 });
-
+$("#day-temp-card .plus-small").click(function(){
+    setDayTemperature((parseFloat(localStorage.dayTemperature) + 0.1).toString());
+});
 $("#day-temp-card .minus").click(function(){
-    setDayTemperature((parseInt(localStorage.dayTemperature) - 1).toString());
+    setDayTemperature((parseFloat(localStorage.dayTemperature) - 1.0).toString());
+});
+$("#day-temp-card .minus-small").click(function(){
+    setDayTemperature((parseFloat(localStorage.dayTemperature) - 0.1).toString());
 });
 
 $("#night-temp-card .plus").click(function(){
-    setNightTemperature((parseInt(localStorage.nightTemperature) + 1).toString());
+    setNightTemperature((parseFloat(localStorage.nightTemperature) + 1.0).toString());
 });
-
+$("#night-temp-card .plus-small").click(function(){
+    setNightTemperature((parseFloat(localStorage.nightTemperature) + 0.1).toString());
+});
 $("#night-temp-card .minus").click(function(){
-    setNightTemperature((parseInt(localStorage.nightTemperature) - 1).toString());
+    setNightTemperature((parseFloat(localStorage.nightTemperature) - 1.0).toString());
+});
+$("#night-temp-card .minus-small").click(function(){
+    setNightTemperature((parseFloat(localStorage.nightTemperature) - 0.1).toString());
 });
 
 $("#vacation-card input").click(function() {
@@ -98,7 +118,6 @@ $("#vacation-card input").click(function() {
 $("#vacation-dialog .close").click(function() {
     $("#vacation-dialog")[0].close();
 });
-
 $("#vacation-dialog .delete").click(function() {
     localStorage.vacationHint = "false";
     $("#vacation-dialog")[0].close();
