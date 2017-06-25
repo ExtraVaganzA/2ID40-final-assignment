@@ -51,6 +51,64 @@ function addSwitch(day, startTime, endTime) {
     );
 }
 
+function updateButtons() {
+    if ($("#monday-card tr").length >= 6) {
+        $("#monday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#monday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#monday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#monday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#tuesday-card tr").length >= 6) {
+        $("#tuesday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#tuesday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#tuesday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#tuesday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#wednesday-card tr").length >= 6) {
+        $("#wednesday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#wednesday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#wednesday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#wednesday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#thursday-card tr").length >= 6) {
+        $("#thursday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#thursday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#thursday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#thursday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#friday-card tr").length >= 6) {
+        $("#friday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#friday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#friday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#friday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#saturday-card tr").length >= 6) {
+        $("#saturday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#saturday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#saturday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#saturday-checkbox")[0].MaterialCheckbox.enable();
+    }
+    
+    if ($("#sunday-card tr").length >= 6) {
+        $("#sunday-card .add")[0].MaterialButton.disable();
+        $(".day-table .mdl-checkbox").has("#sunday-checkbox")[0].MaterialCheckbox.disable();
+    } else {
+        $("#sunday-card .add")[0].MaterialButton.enable();
+        $(".day-table .mdl-checkbox").has("#sunday-checkbox")[0].MaterialCheckbox.enable();
+    }
+}
+
 // Click Functions
 $("#hint-card .close").click(function(){
     $("#hint-card").hide();
@@ -79,6 +137,8 @@ $("#monday-card .add").click(function(){
     $("#monday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("monday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -99,6 +159,8 @@ $("#tuesday-card .add").click(function(){
     $("#tuesday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("tuesday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -119,6 +181,8 @@ $("#wednesday-card .add").click(function(){
     $("#wednesday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("wednesday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -139,6 +203,8 @@ $("#thursday-card .add").click(function(){
     $("#thursday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("thursday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -159,6 +225,8 @@ $("#friday-card .add").click(function(){
     $("#friday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("friday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -179,6 +247,8 @@ $("#saturday-card .add").click(function(){
     $("#saturday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("saturday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -199,6 +269,8 @@ $("#sunday-card .add").click(function(){
     $("#sunday-card .end-time")[0].MaterialTextfield.change("");
     
     addSwitch("sunday", startTime, endTime);
+    
+    updateButtons();
 });
 
 
@@ -218,36 +290,47 @@ $("#switch-card .add").click(function(){
     $("#switch-card .start-time")[0].MaterialTextfield.change("");
     $("#switch-card .end-time")[0].MaterialTextfield.change("");
     
-    if($("#switch-card #monday-checkbox").prop("checked")) {
+    if($("#switch-card #monday-checkbox").prop("checked") && 
+            !$("#switch-card #monday-checkbox").prop("disabled")) {
         addSwitch("monday", startTime, endTime);
     }
     
-    if($("#switch-card #tuesday-checkbox").prop("checked")) {
+    if($("#switch-card #tuesday-checkbox").prop("checked") && 
+            !$("#switch-card #tuesday-checkbox").prop("disabled")) {
         addSwitch("tuesday", startTime, endTime);
     }
     
-    if($("#switch-card #wednesday-checkbox").prop("checked")) {
+    if($("#switch-card #wednesday-checkbox").prop("checked") && 
+            !$("#switch-card #wednesday-checkbox").prop("disabled")) {
         addSwitch("wednesday", startTime, endTime);
     }
     
-    if($("#switch-card #thursday-checkbox").prop("checked")) {
+    if($("#switch-card #thursday-checkbox").prop("checked") && 
+            !$("#switch-card #thursday-checkbox").prop("disabled")) {
         addSwitch("thursday", startTime, endTime);
     }
     
-    if($("#switch-card #friday-checkbox").prop("checked")) {
+    if($("#switch-card #friday-checkbox").prop("checked") && 
+            !$("#switch-card #friday-checkbox").prop("disabled")) {
         addSwitch("friday", startTime, endTime);
     }
     
-    if($("#switch-card #saturday-checkbox").prop("checked")) {
+    if($("#switch-card #saturday-checkbox").prop("checked") && 
+            !$("#switch-card #saturday-checkbox").prop("disabled")) {
         addSwitch("saturday", startTime, endTime);
     }
     
-    if($("#switch-card #sunday-checkbox").prop("checked")) {
+    if($("#switch-card #sunday-checkbox").prop("checked") && 
+            !$("#switch-card #sunday-checkbox").prop("disabled")) {
         addSwitch("sunday", startTime, endTime);
     }
+    
+    updateButtons();
 });
 
 
 $(document).on("click", "tr .remove", function(){
     $("tr").has(this).remove();
+    
+    updateButtons();
 });
